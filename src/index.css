@@ -1,0 +1,205 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #3b82f6;
+  padding: 8px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.navbar-select {
+  padding: 4px;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+}
+
+.navbar2 {
+  background-color: #facc15;
+  padding: 8px;
+  text-align: center;
+}
+
+.navbar2-text {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.grid-container-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 8px;
+  box-sizing: border-box;
+  width: 98%;
+  max-width: none;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  min-width: 0;
+  width: 100%;
+}
+
+.card-img {
+  width: 100%;
+  height: 400px; /* เพิ่มจาก 300px เป็น 400px เพื่อให้รูปภาพใหญ่ขึ้น */
+  object-fit: cover;
+}
+
+.card-title {
+  padding: 14px; /* เพิ่มจาก 12px เป็น 14px */
+  margin: 0;
+  font-size: 22px; /* เพิ่มจาก 20px เป็น 22px */
+}
+
+.card-link {
+  padding: 14px; /* เพิ่มจาก 12px เป็น 14px */
+  font-size: 20px; /* เพิ่มจาก 18px เป็น 20px */
+  margin: 0;
+}
+
+.card-link a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.card-link a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  background-color: #f4f4f4;
+  padding: 10px;
+  text-align: center;
+}
+
+/* สไตล์สำหรับลูกศร */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.arrow-left {
+  left: 10px;
+}
+
+.arrow-right {
+  right: 10px;
+}
+
+.grid-container-wrapper:hover .arrow {
+  opacity: 1;
+}
+
+.arrow-icon {
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.arrow-icon-left {
+  border-width: 10px 15px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.arrow-icon-right {
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent white;
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding: 6px;
+  }
+
+  .card-img {
+      height: 300px; /* ลดจาก 400px เป็น 300px */
+  }
+
+  .card-title, .card-link {
+      font-size: 18px; /* ลดจาก 22px/20px เป็น 18px */
+      padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      padding: 4px;
+  }
+
+  .card-img {
+      height: 250px; /* ลดจาก 300px เป็น 250px */
+  }
+
+  .card-title, .card-link {
+      font-size: 16px;
+      padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 4px;
+  }
+
+  .card-img {
+      height: 200px; /* ลดจาก 250px เป็น 200px */
+  }
+
+  .card-title, .card-link {
+      font-size: 14px;
+      padding: 6px;
+  }
+}
